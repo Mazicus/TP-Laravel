@@ -1,4 +1,4 @@
-# 🚀 Galaxy Congés API
+# Galaxy Congés API
 
 [![Laravel](https://img.shields.io/badge/Laravel-10.x-red)](https://laravel.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
@@ -9,7 +9,7 @@
 
 ---
 
-## 🌟 Objectif du projet
+## Objectif du projet
 
 - **Pilotes** : disposent d'un nombre de jours de repos.
 - **Commandants** : peuvent ajouter/enlever des jours aux pilotes.
@@ -17,7 +17,7 @@
 
 ---
 
-## 🚀 Installation rapide
+## Installation rapide
 
 ```bash
 git clone https://github.com/Mazicus/TP-Laravel.git
@@ -45,7 +45,7 @@ php artisan serve
 
 ---
 
-## 🛣️ Routes principales
+## Routes principales
 
 ### Sans authentification
 - `POST /api/portail/inscription` — Créer un compte pilote
@@ -64,7 +64,7 @@ php artisan serve
 
 ---
 
-## ⚡ Exemples à tester
+## Exemples à tester
 
 - Accès sans token → **401**
 - S'inscrire → se connecter → consulter le profil
@@ -75,7 +75,7 @@ php artisan serve
 
 ---
 
-## 📦 Structure du projet
+## Structure du projet
 
 ```
 app/
@@ -88,24 +88,7 @@ routes/
 
 ---
 
-## 🛠️ Contribuer
-
-Les contributions sont les bienvenues !  
-Pour toute suggestion, veuillez ouvrir une _issue_ ou une _pull request_.
-
----
-
-## 📃 License
-
-MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## 👤 Contact
 
 Créé par [Mazicus](https://github.com/Mazicus).  
 N'hésitez pas à me contacter pour toute question !
 
----
-
-> _English version available upon request._
