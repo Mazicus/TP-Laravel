@@ -1,8 +1,3 @@
-Here is your fixed, clean, properly formatted, ready-to-copy README.md:
-
-
----
-
 # Galaxy Congés API
 
 Une petite API créée pour un TP Laravel.  
