@@ -1,8 +1,5 @@
 # Galaxy Congés API
 
-[![Laravel](https://img.shields.io/badge/Laravel-10.x-red)](https://laravel.com/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
-[![Build Status](https://img.shields.io/github/workflow/status/Mazicus/TP-Laravel/CI)](../../actions)
 
 > **Une API Laravel pour gérer les jours de congé des "astronautes"**  
 > _A simple TP project showcasing JWT authentication, roles, and leave management._
