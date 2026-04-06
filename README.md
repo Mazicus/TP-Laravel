@@ -1,103 +1,111 @@
-# Galaxy Congés API
+# 🚀 Galaxy Congés API
 
-Une petite API créée pour un TP Laravel.  
-Elle sert à gérer des jours de repos pour des “astronautes”.
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-red)](https://laravel.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](#license)
+[![Build Status](https://img.shields.io/github/workflow/status/Mazicus/TP-Laravel/CI)](../../actions)
 
----
-
-## Idée du projet
-
-- Les pilotes ont un nombre de jours de repos.  
-- Les commandants peuvent ajouter ou retirer des jours.  
-- L’API utilise JWT pour l’authentification.
+> **Une API Laravel pour gérer les jours de congé des "astronautes"**  
+> _A simple TP project showcasing JWT authentication, roles, and leave management._
 
 ---
 
-## Installation
+## 🌟 Objectif du projet
+
+- **Pilotes** : disposent d'un nombre de jours de repos.
+- **Commandants** : peuvent ajouter/enlever des jours aux pilotes.
+- **Authentification** : via JWT.
+
+---
+
+## 🚀 Installation rapide
 
 ```bash
-git clone https://github.com/Mazicus/galaxy-conges-api.git
-cd galaxy-conges-api
+git clone https://github.com/Mazicus/TP-Laravel.git
+cd TP-Laravel
 
 composer install
 cp .env.example .env
 php artisan key:generate
 php artisan jwt:secret
 
-# Base SQLite (sinon config MySQL dans .env)
+# Base SQLite (par défaut), sinon configurez MySQL dans .env
 touch database/database.sqlite
 
 php artisan migrate
 php artisan db:seed   # optionnel
 
 php artisan serve
+```
 
-Comptes créés automatiquement (mot de passe : password) :
+### Comptes de test
 
-Pilote : yuri@galaxie.test
-
-Commandant : nova@galaxie.test
-
-
-
----
-
-Routes principales
-
-Sans authentification
-
-POST /api/portail/inscription — créer un compte pilote
-
-POST /api/portail/connexion — obtenir un token
-
-
-Avec token
-
-GET /api/portail/profil
-
-POST /api/portail/deconnexion
-
-POST /api/portail/renouveler
-
-GET /api/repos — voir son solde
-
-POST /api/repos/demande — demander des jours
-
-
-Commandants seulement
-
-POST /api/commandant/repos/{id}/crediter
-
-POST /api/commandant/repos/{id}/debiter
-
-
+- **Pilote** : `yuri@galaxie.test`  
+- **Commandant** : `nova@galaxie.test`  
+**Mot de passe par défaut** : `password`
 
 ---
 
-Tests rapides
+## 🛣️ Routes principales
 
-Sans token → 401
+### Sans authentification
+- `POST /api/portail/inscription` — Créer un compte pilote
+- `POST /api/portail/connexion` — Obtenir un token
 
-S'inscrire → se connecter → consulter le profil
+### Avec token (JWT)
+- `GET /api/portail/profil` — Voir son profil
+- `POST /api/portail/deconnexion` — Déconnexion
+- `POST /api/portail/renouveler` — Renouveler le token
+- `GET /api/repos` — Voir son solde de repos
+- `POST /api/repos/demande` — Demander des jours
 
-Solde initial → 0
-
-Demande invalide → 422
-
-Un commandant peut créditer/débiter
-
-Un pilote ne peut pas accéder aux routes commandant → 403
-
-
+### Réservé au commandant
+- `POST /api/commandant/repos/{id}/crediter` — Crédite des jours
+- `POST /api/commandant/repos/{id}/debiter` — Débite des jours
 
 ---
 
-Structure du projet
+## ⚡ Exemples à tester
 
+- Accès sans token → **401**
+- S'inscrire → se connecter → consulter le profil
+- Solde initial = **0**
+- Demande invalide → **422**
+- Le commandant peut créditer/débiter un pilote
+- Un pilote ne peut pas accéder aux routes commandant → **403**
+
+---
+
+## 📦 Structure du projet
+
+```
 app/
   Controllers/
   Middleware/
   Models/
 database/
 routes/
+```
 
+---
+
+## 🛠️ Contribuer
+
+Les contributions sont les bienvenues !  
+Pour toute suggestion, veuillez ouvrir une _issue_ ou une _pull request_.
+
+---
+
+## 📃 License
+
+MIT — voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+## 👤 Contact
+
+Créé par [Mazicus](https://github.com/Mazicus).  
+N'hésitez pas à me contacter pour toute question !
+
+---
+
+> _English version available upon request._
